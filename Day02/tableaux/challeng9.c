@@ -3,7 +3,7 @@
 
 int main(){
 
-    int n,i,j;
+    int n,i;
     int x;
 
     printf("entrer le Nombre elements  :");
@@ -21,13 +21,13 @@ int main(){
          printf("les element de tableau B est { ");
     for ( i = 0; i < n; i++)
     {
-        for (j = 0; j <n ; j++)
-        {
-            x=T[j];
-        T[j]=T[j+1];
-        T[j+1]=x;
-printf("T[%d]",T[j]);
-        }
+        
+    
+          x=T[i];
+        T[i]=T[i+1];
+        T[i+1]=x;
+printf("%d",T[i]);
+        
         
        
     }
