@@ -48,7 +48,7 @@ void Rechirch_livr(){
     printf("entre un titre de recherch :");
     scanf("%s",titrerecherch);
     for(int i=0;i<nombre_livr;i++){
-        if (strcmp(titre[i], titrerecherch) == 0) {
+        if (strcasecmp(titre[i], titrerecherch) == 0) {
            printf("livre de recherch est : %s",titre[i]);
            printf("livre de recherch est : %s",auteur[i]);
            printf("livre de recherch est : %s",quantite[i]);
@@ -64,7 +64,7 @@ void mettrejourquantit() {
     printf("Entrez un titre: ");
     scanf("%s", titreRecherch);
     for (int i = 0; i < nombre_livr; i++) {
-        if (strcmp(titre[i], titreRecherch) == 0) {
+        if (strcasecmp(titre[i], titreRecherch) == 0) {
             printf("Entrer la nouvelle quantité: ");
             scanf("%d", &nouvellequantite);
             quantite[i] = nouvellequantite;
@@ -80,7 +80,7 @@ void suppremerlivre() {
     printf("Entrez le titre de livre à supprimer: ");
     scanf("%s", titresupprime);
     for (int i = 0; i < nombre_livr; i++) {
-        if (strcmp(titre[i], titresupprime) == 0) {
+        if (strcasecmp(titre[i], titresupprime) == 0) {
             for (int j = i; j < nombre_livr - 1; j++) {
                 strcpy(titre[j], titre[j + 1]);
                 strcpy(auteur[j], auteur[j + 1]);
