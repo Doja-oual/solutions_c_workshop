@@ -43,6 +43,20 @@ void afficherlivre() {
         }
     }
 }
+void Rechirch_livr(){
+    char titrerecherch[Max_Titre];
+    printf("entre un titre de recherch :");
+    scanf("%s",titrerecherch);
+    for(int i=0;i<nombre_livr;i++){
+        if (strcmp(titre[i], titrerecherch) == 0) {
+           printf("livre de recherch est : %s",titre[i]);
+           printf("livre de recherch est : %s",auteur[i]);
+           printf("livre de recherch est : %s",quantite[i]);
+           }
+return;
+    }
+
+}
 
 void mettrejourquantit() {
     char titreRecherch[Max_Titre];
@@ -94,10 +108,11 @@ int main() {
     do {
         printf("1. Ajouter livre\n");
         printf("2. Afficher livre\n");
-        printf("3. Mettre à jour la quantité d'un livre\n");
-        printf("4. Supprimer un livre\n");
-        printf("5. Afficher total des livres\n");
-        printf("6. Quitter\n");
+        printf("3.cherche un livre\n");
+        printf("4. Mettre à jour la quantité d'un livre\n");
+        printf("5. Supprimer un livre\n");
+        printf("6. Afficher total des livres\n");
+        printf("7. Quitter\n");
         printf("Entrer votre choix: ");
         scanf("%d", &choix);
 
@@ -108,22 +123,25 @@ int main() {
             case 2:
                 afficherlivre();
                 break;
-            case 3:
-                mettrejourquantit();
+                case 3 :
+                Rechirch_livr();
                 break;
             case 4:
-                suppremerlivre();
+                mettrejourquantit();
                 break;
             case 5:
-                affichertotallivres();
+                suppremerlivre();
                 break;
             case 6:
+                affichertotallivres();
+                break;
+            case 7:
                 printf("Au revoir!\n");
                 break;
             default:
                 printf("Choix invalide!\n");
         }
-    } while (choix != 6);
+    } while (choix <= 7);
 
     return 0;
 }
