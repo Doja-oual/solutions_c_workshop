@@ -1,17 +1,19 @@
 #include<stdio.h>
  #include<string.h>
-    struct persone {
-    char nom[];
-    char prenome[];
-  int age;
+     struct persone {
+    char nom[10];
+    char prenome[10];
+  int age;};
+  
+
     int main(){
     struct persone p1;
-    persone.age=22;
-    strcpy(persone.nom,"oualla");
-    strcpy(persone.prenome,"khadija")
-printf("nom:%d",persone.age);
-printf("nom:%s\n",persone.nom);
-printf("nom:%s\n",persone.prenome);
+    p1.age=22;
+    strcpy(p1.nom,"oualla");
+    strcpy(p1.prenome,"khadija");
+printf("nom:%d",p1.age);
+printf("nom:%s\n",p1.nom);
+printf("nom:%s\n",p1.prenome);
 return 0;
 
  }

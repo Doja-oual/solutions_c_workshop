@@ -8,7 +8,7 @@ struct Livre {
 };
 
 struct Livre creerLivre(const char* titre, const char* auteur, int annee) {
-    struct Livre monLivre; // Nom de variable plus descriptif
+    struct Livre monLivre; 
 
     strcpy(monLivre.titre, titre);
     strcpy(monLivre.auteur, auteur);
