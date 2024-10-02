@@ -109,6 +109,9 @@ void affichecontact() {
     } else {
         for (int i = 0; i < Nbrcontact; i++) {
             aficherelement(i);
+            
+
+
         }
     }
 }
@@ -126,6 +129,34 @@ void recherchecontact() {
     }
 }
 
+void TriAlpha(struct contact CO[]){
+    for(int i=0;i<Nbrcontact  - 1;i++){
+        for(int j=0, k=0;j<Nbrcontact -i -1;j++){
+            if(strcasecmp(CO[j].Nom, CO[j+1].Nom) > 0){
+                 struct contact T;
+                T = CO[j];
+                CO[j] = CO[j+1];
+                CO[j+1] = T;
+            }
+        }
+    }affichecontact(contacts);
+}
+void Trialfaparsiliction(struct contact CO[]){
+    for(int i=0;i<Nbrcontact;i++){
+        int index=i;
+        for(int j=i+1;j<Nbrcontact;j++){
+            if(strcasecmp(CO[index].Nom,CO[j].Nom)<0){
+                  struct contact T;
+                T = CO[i];
+                CO[i] = CO[j];
+                CO[j] = T;
+            }
+        }
+    }affichecontact(contacts);
+}
+    
+   
+
 void menu() {
     char choix;
     do {
@@ -135,12 +166,14 @@ void menu() {
         printf("3. Supprimer un contact.\n");
         printf("4. Afficher tous les contacts.\n");
         printf("5. Rechercher un contact.\n");
+         printf("6. tri alphabitique tri bublle.\n");
+         printf("7. tri alphabitique par silection.\n");
         printf("0. Quitter.\n");
         printf("Entrer un choix: ");
         scanf(" %c", &choix);
 
         int N = choix - '0';
-        if (N >= 0 && N <= 5) {
+        if (N >= 0 && N <= 7) {
             switch (N) {
                 case 1:
                     ajoutecontact();
@@ -157,6 +190,12 @@ void menu() {
                 case 5:
                     recherchecontact();
                     break;
+                    case 6:
+                  TriAlpha(contacts);
+                    break;
+                     case 7:
+                    Trialfaparsiliction(contacts);
+                    break;
                 case 0:
                     printf("Quitter le programme.\n");
                     exit(0);
@@ -168,7 +207,7 @@ void menu() {
         } else {
             printf("Erreur: entrer un nombre valide.\n");
         }
-    } while (1);
+    } while (1);//boucle infinie 
 }
 
 int main() {
