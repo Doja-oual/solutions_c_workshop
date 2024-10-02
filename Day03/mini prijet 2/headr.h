@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
-ajoutecontact();
- modifiercontact();
-     affichecontact();
-      recherchecontact();
+   void ajoutecontact();
+void modifiercontact();
+ void Suprimecontact() ;
+  void   affichecontact();
+      void recherchecontact();
